@@ -3,8 +3,9 @@
 // const request = fetch(
 //   `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=150d8b7ea78986c49459a03f8b6e31f0`
 // );
+const submitBtn = document.querySelector(".submit-me");
 
-document.querySelector(".submit-me").addEventListener("click", function () {
+submitBtn.addEventListener("click", function () {
   const cityName = document.querySelector("#cityname").value;
 
   const getWeatherData = function () {
@@ -23,6 +24,7 @@ document.querySelector(".submit-me").addEventListener("click", function () {
 });
 
 const renderWeather = function (data) {
+  console.log(data);
   const html = `<div class= weather_data>
   <h3 class="weather_description">Current conditions: ${
     data.weather[0].description
@@ -42,6 +44,7 @@ const renderWeather = function (data) {
   let labelSunset = document.querySelector(".sunset");
 
   function timeConverterSunrise(sunrise) {
+    // debugger;
     var a = new Date(sunrise * 1000);
     var months = [
       "Jan",
@@ -87,6 +90,9 @@ const renderWeather = function (data) {
     var date = a.getDate();
     var hour = ((a.getHours() + 11) % 12) + 1;
     var min = a.getMinutes();
+    min = min < 10 ? "0" + min : min;
+
+    // debugger;
     var sec = a.getSeconds();
     var time = hour + ":" + min + " PM";
     return time;

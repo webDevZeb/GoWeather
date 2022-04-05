@@ -6,7 +6,7 @@
 
 body {
   text-align: center;
-  background-color: #3386cf;
+  background-color: rgb(147, 209, 229);
   line-height: 2;
   font-family: "Cairo", sans-serif;
 }
@@ -42,13 +42,13 @@ h1 {
   font-size: 6rem;
 }
 
-input {
-  height: 2rem;
-}
-
 button {
   height: 2rem;
   width: 2rem;
   margin-left: 0.1rem;
   margin-top: 0.1rem;
+}
+
+input {
+  height: 2rem;
 }
